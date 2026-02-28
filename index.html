@@ -61,6 +61,15 @@
         <div class="container">
             <h2>행운의 로또 번호 추첨</h2>
             <p style="text-align: center;">자연의 랜덤함에서 영감을 얻은 번호 추첨기입니다. 행운을 시험해보세요!</p>
+            
+            <div style="margin: 30px auto; max-width: 600px; padding: 20px; border: 1px solid var(--accent-color); border-radius: 12px; background: var(--card-bg);">
+                <h3 style="text-align: center; color: var(--primary-green); margin-bottom: 20px;">역대 최다 빈도 번호 TOP 10</h3>
+                <div id="lotto-ranking-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.95rem;">
+                    <!-- JS에서 렌더링 -->
+                </div>
+                <p style="font-size: 0.8rem; color: #777; margin-top: 15px; text-align: center;">* 1회~1212회 기준 (보너스 번호 제외)</p>
+            </div>
+
             <button id="lotto-btn">번호 추첨하기</button>
             <div id="lotto-numbers"></div>
         </div>
