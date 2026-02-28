@@ -1,6 +1,6 @@
-
+// 로또 번호 추첨 로직
 document.getElementById('lotto-btn').addEventListener('click', () => {
-    const frequentNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; // 실제로는 더 많은 데이터가 필요합니다.
+    const frequentNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
     const generatedNumbers = new Set();
 
     // 빈도수 높은 번호 중 4개 추첨
@@ -16,5 +16,32 @@ document.getElementById('lotto-btn').addEventListener('click', () => {
     }
 
     const lottoNumbersDiv = document.getElementById('lotto-numbers');
-    lottoNumbersDiv.innerHTML = `<strong>추첨된 번호:</strong> ${[...generatedNumbers].join(', ')}`;
+    lottoNumbersDiv.innerHTML = `<strong>추첨된 번호:</strong> ${[...generatedNumbers].sort((a, b) => a - b).join(', ')}`;
+});
+
+// 다크 모드 토글 로직
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// 초기 테마 설정 확인
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    body.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'dark') {
+        themeToggle.textContent = '라이트 모드';
+    }
+}
+
+themeToggle.addEventListener('click', () => {
+    let theme = body.getAttribute('data-theme');
+    
+    if (theme === 'dark') {
+        body.removeAttribute('data-theme');
+        themeToggle.textContent = '다크 모드';
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '라이트 모드';
+        localStorage.setItem('theme', 'dark');
+    }
 });
