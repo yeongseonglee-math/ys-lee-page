@@ -43,8 +43,59 @@
             <div class="service-grid">
                 <div class="service-item">
                     <h3>개인 지도</h3>
-                    <p>학생 개개인의 수준에 맞춘 1:1 맞춤형 수학 지도를 제공합니다.</p>
+                    <p>개개인 수준에 맞춘 1:1 지도를 희망하는 경우 아래를 클릭하여 연락처를 남겨주세요.</p>
+                    <button id="open-tutoring-form" class="btn" style="margin-top: 15px; font-size: 0.9rem; padding: 8px 20px;">상담 신청하기</button>
                 </div>
+...
+    <!-- 개인지도 상담 신청 모달 -->
+    <div id="tutoring-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="color: var(--primary-green); margin-bottom: 20px;">1:1 개인지도 상담 신청</h3>
+            <form action="https://formspree.io/f/xvgrvjlk" method="POST" id="tutoring-form">
+                <div class="form-group">
+                    <label>이름</label>
+                    <input type="text" name="이름" required placeholder="성함을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label>학생과의 관계</label>
+                    <input type="text" name="관계" required placeholder="예: 본인, 학부모 등">
+                </div>
+                <div class="form-group">
+                    <label>대상 학년</label>
+                    <input type="text" name="학년" required placeholder="예: 중학교 2학년">
+                </div>
+                <div class="form-group">
+                    <label>희망 과목</label>
+                    <input type="text" name="과목" required placeholder="예: 수학(상), 미적분 등">
+                </div>
+                <div class="form-group">
+                    <label>현재 수준</label>
+                    <textarea name="현재수준" required placeholder="현재 성적이나 학습 상태를 간단히 적어주세요"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>연락처</label>
+                    <input type="tel" name="연락처" required placeholder="010-0000-0000">
+                </div>
+                <div class="form-group">
+                    <label>성별</label>
+                    <div style="display: flex; gap: 20px; margin-top: 5px;">
+                        <label style="font-weight: normal;"><input type="radio" name="성별" value="남" required> 남</label>
+                        <label style="font-weight: normal;"><input type="radio" name="성별" value="여" required> 여</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>기타 문의사항</label>
+                    <textarea name="기타" placeholder="추가로 궁금하신 점을 입력하세요"></textarea>
+                </div>
+                <!-- 답장 받을 이메일 설정 (선택사항) -->
+                <input type="hidden" name="_replyto" value="smitthh802@gmail.com">
+                <input type="hidden" name="_subject" value="[이영성 수학] 1:1 개인지도 상담 신청 접수">
+                
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">상담 신청 보내기</button>
+            </form>
+        </div>
+    </div>
                 <div class="service-item">
                     <h3>온라인 강좌</h3>
                     <p>언제 어디서든 학습할 수 있는 다양한 수준의 온라인 수학 강좌를 제공합니다.</p>

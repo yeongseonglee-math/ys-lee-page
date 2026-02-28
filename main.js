@@ -29,13 +29,11 @@ document.getElementById('lotto-btn').addEventListener('click', () => {
     const frequentNumbers = lottoStats.map(s => s.number);
     const generatedNumbers = new Set();
 
-    // 빈도수 높은 번호 중 3개 우선 추첨 (전략적 선택)
     while (generatedNumbers.size < 3) {
         const randomIndex = Math.floor(Math.random() * frequentNumbers.length);
         generatedNumbers.add(frequentNumbers[randomIndex]);
     }
 
-    // 나머지 3개는 완전 랜덤 추첨
     while (generatedNumbers.size < 6) {
         const randomNumber = Math.floor(Math.random() * 45) + 1;
         generatedNumbers.add(randomNumber);
@@ -44,7 +42,6 @@ document.getElementById('lotto-btn').addEventListener('click', () => {
     const sortedNumbers = [...generatedNumbers].sort((a, b) => a - b);
     const lottoNumbersDiv = document.getElementById('lotto-numbers');
     
-    // 결과 출력 및 빈도수 포함 여부 표시
     let resultHTML = `<strong>추첨된 번호:</strong><br><div style="margin-top:10px;">`;
     sortedNumbers.forEach(num => {
         const isFrequent = frequentNumbers.includes(num);
@@ -67,9 +64,34 @@ document.getElementById('lotto-btn').addEventListener('click', () => {
             </span>`;
     });
     resultHTML += `</div>`;
-    
     lottoNumbersDiv.innerHTML = resultHTML;
 });
+
+// 상담 신청 모달 로직
+const modal = document.getElementById('tutoring-modal');
+const openBtn = document.getElementById('open-tutoring-form');
+const closeBtn = document.querySelector('.close-modal');
+
+if (openBtn) {
+    openBtn.onclick = () => {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // 스크롤 방지
+    };
+}
+
+if (closeBtn) {
+    closeBtn.onclick = () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+}
+
+window.onclick = (event) => {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+};
 
 // 다크 모드 토글 로직
 const themeToggle = document.getElementById('theme-toggle');
