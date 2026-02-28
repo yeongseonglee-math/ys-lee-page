@@ -83,8 +83,8 @@ nav a {
 /* Hero Section */
 .hero {
     height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop');
+    background: linear-gradient(rgba(0,40,0,0.3), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=2000');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
