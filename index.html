@@ -45,7 +45,7 @@
                 <div class="service-item">
                     <h3>개인 지도</h3>
                     <p>개개인 수준에 맞춘 1:1 지도를 희망하는 경우 아래를 클릭하여 연락처를 남겨주세요.</p>
-                    <button id="open-tutoring-form" class="btn" style="margin-top: 15px; font-size: 0.9rem; padding: 8px 20px;">상담 신청하기</button>
+                    <a href="https://forms.gle/kebRixQSQ8VwmTJJA" target="_blank" class="btn" style="margin-top: 15px; font-size: 0.9rem; padding: 8px 20px;">상담 신청하기</a>
                 </div>
 
                 <!-- 온라인 강좌 -->
@@ -58,58 +58,12 @@
                 <!-- 입시 컨설팅 -->
                 <div class="service-item">
                     <h3>입시 컨설팅</h3>
-                    <p>수학 관련 입시 전략 및 학습 계획을 컨설팅해드립니다.</p>
+                    <p>수학 관련 입시 전략 및 학습 계획을 컨설팅해드립니다. 상담이 필요하시면 신청해주세요.</p>
+                    <a href="https://forms.gle/kebRixQSQ8VwmTJJA" target="_blank" class="btn" style="margin-top: 15px; font-size: 0.9rem; padding: 8px 20px;">상담 신청하기</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 개인지도 상담 신청 모달 -->
-    <div id="tutoring-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3 style="color: var(--primary-green); margin-bottom: 20px;">1:1 개인지도 상담 신청</h3>
-            <form action="https://formspree.io/f/smitthh802@gmail.com" method="POST" id="tutoring-form">
-                <div class="form-group">
-                    <label>이름</label>
-                    <input type="text" name="name" required placeholder="성함을 입력하세요">
-                </div>
-                <div class="form-group">
-                    <label>학생과의 관계</label>
-                    <input type="text" name="relation" required placeholder="예: 본인, 학부모 등">
-                </div>
-                <div class="form-group">
-                    <label>대상 학년</label>
-                    <input type="text" name="grade" required placeholder="예: 중학교 2학년">
-                </div>
-                <div class="form-group">
-                    <label>희망 과목</label>
-                    <input type="text" name="subject" required placeholder="예: 수학(상), 미적분 등">
-                </div>
-                <div class="form-group">
-                    <label>현재 수준</label>
-                    <textarea name="level" required placeholder="현재 성적이나 학습 상태를 간단히 적어주세요"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>연락처</label>
-                    <input type="tel" name="phone" required placeholder="010-0000-0000">
-                </div>
-                <div class="form-group">
-                    <label>성별</label>
-                    <div style="display: flex; gap: 20px; margin-top: 5px;">
-                        <label style="font-weight: normal;"><input type="radio" name="gender" value="남" required> 남</label>
-                        <label style="font-weight: normal;"><input type="radio" name="gender" value="여" required> 여</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>기타 문의사항</label>
-                    <textarea name="etc" placeholder="추가로 궁금하신 점을 입력하세요"></textarea>
-                </div>
-                <input type="hidden" name="_subject" value="[이영성 수학] 1:1 개인지도 상담 신청 접수">
-                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">상담 신청 보내기</button>
-            </form>
-        </div>
-    </div>
 
     <section id="lotto" class="section">
         <div class="container">

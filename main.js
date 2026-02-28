@@ -67,32 +67,6 @@ document.getElementById('lotto-btn').addEventListener('click', () => {
     lottoNumbersDiv.innerHTML = resultHTML;
 });
 
-// 상담 신청 모달 로직
-const modal = document.getElementById('tutoring-modal');
-const openBtn = document.getElementById('open-tutoring-form');
-const closeBtn = document.querySelector('.close-modal');
-
-if (openBtn) {
-    openBtn.onclick = () => {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // 스크롤 방지
-    };
-}
-
-if (closeBtn) {
-    closeBtn.onclick = () => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    };
-}
-
-window.onclick = (event) => {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-};
-
 // 다크 모드 토글 로직
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
